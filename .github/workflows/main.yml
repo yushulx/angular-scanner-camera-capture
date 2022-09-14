@@ -1,0 +1,20 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }} 
+        build_configuration: production 
+        base_href: /angular-scanner-camera-capture/   
+        deploy_branch: gh-pages 
+        angular_dist_build_folder: dist/angular-scanner-camera-capture

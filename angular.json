@@ -20,7 +20,12 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/dwt/dist",
+                "output": "assets/dynamic-web-twain"
+              }
             ],
             "styles": [
               "src/styles.css"
